@@ -95,3 +95,27 @@ nav a:hover {
   background-color: #e04f00; /* Slightly darker orange for hover effect */
   transform: translateY(-2px);
 }
+
+/* --- HERO IMAGE LINKING --- */
+.hero {
+  background-image: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9)), url('images/hero-bg.png');
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #071121; /* Slightly darker than midnight navy */
+    border-top: 1px solid var(--deep-slate);
+}
+
+.footer-logo {
+    height: 30px;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+footer p {
+    color: var(--cool-gray);
+    font-size: 0.9rem;
+}
