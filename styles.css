@@ -105,7 +105,7 @@ nav a:hover {
 }
 
 .services-section {
-  padding: 100px 50px;
+  padding: 120px 50px 100px 50px;
   background-color: var(--midnight-navy);
 }
 
