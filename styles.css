@@ -334,11 +334,13 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
     font-size: 2.5rem;
     margin-bottom: 15px;
     color: var(--crisp-white);
+    text-align: center;
 }
 
 .bottom-cta p {
     color: var(--cool-gray);
     font-size: 1.2rem;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
     max-width: 600px;
+    text-align: center;
 }
