@@ -66,19 +66,40 @@
     <section id="contact" class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
-                <h2>Contact GSI</h2>
-                <p>For project inquiries, specialized inspections, or technical consultations, contact our operations desk.</p>
+                <h2>Operational Inquiries</h2>
+                <p>Submit project details for technical consultation or inspection scheduling.</p>
                 <div class="contact-details">
-                    <p><strong>Phone:</strong> 504 222-2977</p>
-                    <p><strong>Inspections:</strong> inspections@gsithermal.com</p>
-                    <p><strong>Support:</strong> support@gsithermal.com</p>
-                    <p><strong>Billing:</strong> billing@gsithermal.com</p>
+                    <p><strong>Primary Operations:</strong> 504 222-2977</p>
+                    <p><strong>Administrative Aliases:</strong></p>
+                    <ul>
+                        <li>inspections@gsithermal.com</li>
+                        <li>billing@gsithermal.com</li>
+                        <li>support@gsithermal.com</li>
+                    </ul>
                 </div>
             </div>
-            <div class="contact-form-placeholder">
-                <p>Operational hours: Monday – Friday, 0800 – 1700 CST</p>
-                <p>Emergency/Off-hour inspections available by request.</p>
-                <a href="mailto:inspections@gsithermal.com" class="cta-button">Email Operations</a>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/YOUR_UNIQUE_ID" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Full Name / Company" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <select name="service-type" required>
+                            <option value="" disabled selected>Select Inspection Type</option>
+                            <option value="Roofing">Commercial Roofing</option>
+                            <option value="Electrical">Electrical Systems</option>
+                            <option value="Solar">Solar Infrastructure</option>
+                            <option value="Other">Other / Industrial</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Project Details / Location" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Submit to Operations</button>
+                </form>
             </div>
         </div>
     </section>
