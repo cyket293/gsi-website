@@ -156,6 +156,46 @@ nav a:hover {
   font-size: 1rem;
 }
 
+.standards-section {
+    padding: 100px 50px;
+    background-color: var(--deep-slate);
+}
+
+.standards-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.standards-text {
+    flex: 1;
+}
+
+.standards-text h2 {
+    font-size: 2.5rem;
+    color: var(--infrared-orange);
+    margin-bottom: 25px;
+}
+
+.standards-text p {
+    color: var(--cool-gray);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.standards-image {
+    flex: 1;
+}
+
+.standards-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border: 1px solid rgba(136, 146, 176, 0.2);
+}
+
 footer {
     padding: 60px 20px;
     text-align: center;
@@ -172,4 +212,10 @@ footer {
 footer p {
     color: var(--cool-gray);
     font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+    .standards-content {
+        flex-direction: column;
+    }
 }
