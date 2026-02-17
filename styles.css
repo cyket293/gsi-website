@@ -320,8 +320,12 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
 
 /* --- BOTTOM CTA --- */
 .bottom-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: var(--midnight-navy);
     border-top: 1px solid rgba(136, 146, 176, 0.1);
 }
@@ -329,10 +333,12 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
 .bottom-cta h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
+    color: var(--crisp-white);
 }
 
 .bottom-cta p {
     color: var(--cool-gray);
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    max-width: 600px;
 }
