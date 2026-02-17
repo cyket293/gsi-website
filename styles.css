@@ -21,24 +21,34 @@ body {
   line-height: 1.6;
 }
 
-/* --- STICKY HEADER --- */
+/* --- UPDATED STICKY HEADER --- */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(10, 25, 47, 0.95); /* Midnight Navy with slight transparency */
+  height: 80px; /* We are setting a firm height to anchor the logo */
+  background-color: rgba(10, 25, 47, 0.95); 
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 0 50px; /* Removed vertical padding to let the logo expand */
   box-sizing: border-box;
   z-index: 1000;
   border-bottom: 1px solid var(--deep-slate);
 }
 
+.logo {
+  height: 100%; /* Keeps the container the full height of the header */
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
-  height: 40px; /* Sized perfectly for your horizontal lockup */
+  height: 70%; /* This makes the logo span nearly the entire height */
+  width: auto;  /* Maintains your horizontal aspect ratio */
+  display: block;
+  filter: drop-shadow(0 0 5px rgba(255, 90, 0, 0.2)); /* Optional: adds a tiny bit of extra breathing room for that glow */
 }
 
 nav a {
