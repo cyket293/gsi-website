@@ -58,6 +58,11 @@
                             <option value="Electrical Systems">Electrical Systems</option>
                             <option value="Solar Infrastructure">Solar Infrastructure</option>
                             <option value="Industrial Facilities">Industrial Facilities</option>
+                            <option value="Petrochemical & Refining">Petrochemical & Refining</option>
+                            <option value="Building Envelopes">Building Envelopes</option>
+                            <option value="Maritime & Offshore">Maritime & Offshore</option>
+                            <option value="Data Center Infrastructure">Data Center Infrastructure</option>
+                            <option value="High-Voltage Utilities">High-Voltage Utilities</option>
                             <option value="Other">Other</option>
                             <option value="Emergency Request">Emergency Request (Urgent)</option>
                         </select>
@@ -94,7 +99,7 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    statusMsg.innerHTML = "Success. Your data has been securely routed to Operations.";
+                    statusMsg.innerHTML = "Success. Your information has been securely routed to Operations.";
                     statusMsg.style.color = "#00FF00"; // Makes it green
                     statusMsg.style.marginTop = "15px";
                     form.reset();
