@@ -44,19 +44,24 @@ header {
   height: 90%;
   width: auto;
   display: block;
-  /* Glow filter removed to allow the logo's natural design to shine */
 }
 
-nav a {
+/* NEW OUTLINED BUTTON STYLES FOR NAV */
+nav .nav-btn {
   color: var(--crisp-white);
   text-decoration: none;
-  margin-left: 30px;
+  margin-left: 20px;
   font-weight: 600;
-  transition: color 0.3s;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-nav a:hover {
+nav .nav-btn:hover {
+  border-color: var(--infrared-orange);
   color: var(--infrared-orange);
+  background-color: rgba(255, 90, 0, 0.05);
 }
 
 .hero {
@@ -85,6 +90,25 @@ nav a:hover {
   max-width: 800px;
 }
 
+/* NEW INTRO BANNER */
+.intro-banner {
+    background-color: var(--deep-slate);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(136, 146, 176, 0.1);
+}
+
+.intro-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.intro-content p {
+    font-size: 1.2rem;
+    color: var(--cool-gray);
+    line-height: 1.8;
+}
+
 .cta-button {
   background-color: var(--infrared-orange);
   color: var(--crisp-white);
@@ -103,7 +127,7 @@ nav a:hover {
 }
 
 .services-section {
-  padding: 120px 50px 100px 50px;
+  padding: 100px 50px;
 }
 
 .section-header {
@@ -115,19 +139,53 @@ nav a:hover {
   font-size: 2.5rem;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* NEW SERVICE DETAIL STYLING */
+.service-detail {
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    background-color: var(--deep-slate);
+    border-radius: 15px;
+    border: 1px solid rgba(136, 146, 176, 0.1);
+    padding: 50px;
 }
 
-.service-card {
-  background-color: var(--deep-slate);
-  padding: 40px;
-  border-radius: 10px;
-  border: 1px solid rgba(136, 146, 176, 0.1);
+.service-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-header h3 {
+    color: var(--infrared-orange);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.service-header p {
+    color: var(--cool-gray);
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.process-step h4 {
+    color: var(--crisp-white);
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--infrared-orange);
+    padding-left: 10px;
+}
+
+.process-step p {
+    color: var(--cool-gray);
+    font-size: 0.95rem;
 }
 
 .standards-section {
@@ -183,4 +241,5 @@ footer {
 @media (max-width: 900px) {
     .standards-content { flex-direction: column; }
     .standards-container { padding: 40px 20px; }
+    .service-detail { padding: 30px 20px; }
 }
