@@ -317,3 +317,22 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
     .standards-container { padding: 40px 20px; }
     .service-detail { padding: 30px 20px; }
 }
+
+/* --- BOTTOM CTA --- */
+.bottom-cta {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: var(--midnight-navy);
+    border-top: 1px solid rgba(136, 146, 176, 0.1);
+}
+
+.bottom-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.bottom-cta p {
+    color: var(--cool-gray);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
