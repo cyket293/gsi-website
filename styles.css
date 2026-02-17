@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -149,6 +150,13 @@ nav .nav-btn:hover {
   border: 1px solid rgba(136, 146, 176, 0.1);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--infrared-orange);
+  box-shadow: 0 0 15px rgba(255, 90, 0, 0.2);
 }
 
 .service-card h3 { color: var(--infrared-orange); font-size: 1.4rem; margin-bottom: 15px; }
@@ -293,6 +301,10 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
 .footer-logo { height: 30px; margin-bottom: 20px; }
 
 @media (max-width: 900px) {
+    html {
+        scroll-padding-top: 180px; 
+    }
+
     header {
         flex-direction: column;
         height: auto;
@@ -311,6 +323,9 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
     
     nav .nav-btn { margin-left: 0; }
     
+    .hero { padding-top: 150px; }
+    .sub-hero { padding-top: 180px; height: auto; padding-bottom: 50px; }
+
     .process-grid { grid-template-columns: 1fr; }
     
     .standards-content, .contact-container { flex-direction: column; }
