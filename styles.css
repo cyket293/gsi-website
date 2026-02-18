@@ -359,3 +359,127 @@ footer { padding: 60px 20px; text-align: center; background-color: #071121; }
     max-width: 600px;
     text-align: center;
 }
+
+.protocol-section {
+    padding: 100px 50px;
+    background-color: var(--midnight-navy);
+}
+
+.protocol-container {
+    display: flex;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.protocol-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.protocol-tab {
+    background: transparent;
+    border: 1px solid rgba(136, 146, 176, 0.2);
+    border-left: 4px solid transparent;
+    padding: 25px;
+    text-align: left;
+    color: var(--cool-gray);
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0 5px 5px 0;
+}
+
+.protocol-tab:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--crisp-white);
+}
+
+.protocol-tab.active {
+    border-left-color: var(--infrared-orange);
+    background-color: var(--deep-slate);
+    color: var(--crisp-white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.protocol-tab span {
+    color: var(--infrared-orange);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.protocol-display {
+    flex: 2;
+    background-color: var(--deep-slate);
+    padding: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(136, 146, 176, 0.1);
+    min-height: 300px;
+    position: relative;
+}
+
+.protocol-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.protocol-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.protocol-content h3 {
+    color: var(--infrared-orange);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.protocol-content p {
+    color: var(--cool-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .protocol-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .protocol-list {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .protocol-tab {
+        flex: 1;
+        text-align: center;
+        padding: 15px;
+        white-space: nowrap;
+        border-bottom: 4px solid transparent;
+        border-left: 1px solid rgba(136, 146, 176, 0.2);
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .protocol-tab.active {
+        border-left: 1px solid rgba(136, 146, 176, 0.2);
+        border-bottom-color: var(--infrared-orange);
+    }
+
+    .protocol-tab span {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+}
