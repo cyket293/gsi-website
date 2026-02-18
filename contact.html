@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Operations | Gulf South Infrared</title>
-    <meta name="description" content="Schedule a thermal diagnostic inspection or technical consultation with the Gulf South Infrared operations desk.">
+    <title>Contact Us | Gulf South Infrared</title>
+    <meta name="description" content="Schedule a thermal diagnostic inspection or technical consultation with Gulf South Infrared.">
     <link rel="canonical" href="https://gsithermal.com/contact.html">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -32,7 +32,6 @@
                     <a href="utilities.html">High-Voltage Utilities</a>
                 </div>
             </div>
-
             <div class="dropdown">
                 <a href="#" class="nav-btn">Company ▾</a>
                 <div class="dropdown-content">
@@ -41,23 +40,21 @@
                     <a href="careers.html">Careers</a>
                 </div>
             </div>
-
             <a href="index.html#standards" class="nav-btn">Standards</a>
-
             <a href="contact.html" class="nav-btn" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
         </nav>
     </header>
     
     <section class="sub-hero">
-        <h1>Operations Desk</h1>
-        <h2>Schedule a diagnostic deployment or request a technical consultation.</h2>
+        <h1>Contact Us</h1>
+        <h2>Schedule a diagnostic inspection or request a technical consultation.</h2>
     </section>
 
     <section class="contact-section">
         <div class="contact-container">
             <div class="contact-info">
-                <h2>Direct Dispatch</h2>
-                <p>Submit your project scope for a technical consultation or rapid diagnostic deployment. Our operations team reviews all submissions promptly to ensure precise, actionable data delivery for your facility.</p>
+                <h2>Get in Touch</h2>
+                <p>Submit your project scope for a technical consultation or rapid diagnostic service. Our team reviews all submissions promptly to ensure precise, actionable data delivery for your facility.</p>
                 <div class="contact-details">
                     <p><strong>Primary Line:</strong> 504 222-2977</p>
                     <p><strong>Inspections:</strong> inspections@gsithermal.com</p>
@@ -100,7 +97,7 @@
                     <div class="form-group">
                         <textarea name="project_scope" placeholder="Project Scope & Diagnostics Needed" required></textarea>
                     </div>
-                    <button type="submit" class="cta-button">Submit to Operations</button>
+                    <button type="submit" class="cta-button">Submit Request</button>
                     <p id="form-status"></p>
                 </form>
             </div>
@@ -126,7 +123,7 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    statusMsg.innerHTML = "Success. Your information has been securely routed to Operations.";
+                    statusMsg.innerHTML = "Success. Your information has been securely routed to our team.";
                     statusMsg.style.color = "#00FF00"; // Makes it green
                     statusMsg.style.marginTop = "15px";
                     form.reset();
@@ -135,12 +132,12 @@
                         if (Object.hasOwn(data, 'errors')) {
                             statusMsg.innerHTML = data["errors"].map(error => error["message"]).join(", ");
                         } else {
-                            statusMsg.innerHTML = "Transmission error. Please call dispatch directly.";
+                            statusMsg.innerHTML = "Transmission error. Please call us directly.";
                         }
                     })
                 }
             }).catch(error => {
-                statusMsg.innerHTML = "Transmission error. Please call dispatch directly.";
+                statusMsg.innerHTML = "Transmission error. Please call us directly.";
             });
         }
         form.addEventListener("submit", handleSubmit);
