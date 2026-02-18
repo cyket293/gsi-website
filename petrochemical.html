@@ -29,33 +29,55 @@
         <h2>Non-intrusive monitoring of storage tanks, pipelines, and flare stacks.</h2>
     </section>
 
-    <section class="services-section">
-        <div class="service-detail">
-            <div class="service-header">
-                <h3>The GSI Diagnostic Protocol</h3>
-                <p>Mitigate catastrophic risk and maintain stringent operational compliance through objective, high-fidelity thermal data collection.</p>
+    <section class="protocol-section">
+        <div class="section-header">
+            <h2>The GSI Diagnostic Protocol</h2>
+            <p>Mitigate catastrophic risk and maintain stringent operational compliance through objective, high-fidelity thermal data collection.</p>
+        </div>
+
+        <div class="protocol-container">
+            <div class="protocol-list">
+                <button class="protocol-tab active" onclick="openStep(event, 'step1')">
+                    <span>01.</span> Asset Targeting
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step2')">
+                    <span>02.</span> Radiometric Scan
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step3')">
+                    <span>03.</span> Anomaly Detection
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step4')">
+                    <span>04.</span> Intelligence
+                </button>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>01. Asset Targeting & Compliance</h4>
+
+            <div class="protocol-display">
+                
+                <div id="step1" class="protocol-content active">
+                    <h3>Asset Targeting & Compliance</h3>
                     <p>We coordinate with plant managers to identify critical infrastructure, adhering to all site-specific safety and explosive-environment protocols.</p>
                 </div>
-                <div class="process-step">
-                    <h4>02. Radiometric Scanning</h4>
+
+                <div id="step2" class="protocol-content">
+                    <h3>Radiometric Scanning</h3>
                     <p>Using specialized thermal sensors, we capture the temperature differentials of tank fluid levels, refractory linings, and high-pressure pipelines.</p>
                 </div>
-                <div class="process-step">
-                    <h4>03. Anomaly Detection</h4>
+
+                <div id="step3" class="protocol-content">
+                    <h3>Anomaly Detection</h3>
                     <p>Our experts analyze the thermograms to detect hidden leaks, refractory breakdown, sludge buildup, and abnormal thermal signatures.</p>
                 </div>
-                <div class="process-step">
-                    <h4>04. Actionable Intelligence</h4>
+
+                <div id="step4" class="protocol-content">
+                    <h3>Actionable Intelligence</h3>
                     <p>We deliver a comprehensive diagnostic report, providing your maintenance and engineering teams with the precise data needed to execute targeted interventions.</p>
                 </div>
+
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
-            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
         </div>
     </section>
 
@@ -63,6 +85,26 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openStep(evt, stepName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("protocol-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("protocol-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(stepName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(stepName).classList.add("active");
+            }, 10);
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
