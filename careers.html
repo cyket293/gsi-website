@@ -78,8 +78,8 @@
                         <input type="tel" name="phone" placeholder="Phone Number*" required>
                     </div>
                     <div class="form-group">
-                        <label style="display: block; margin-bottom: 10px; color: var(--cool-gray); font-size: 0.9rem;">Upload Resume (PDF Preferred)*</label>
-                        <input type="file" name="resume" accept=".pdf,.doc,.docx" required style="padding: 10px;">
+                        <label style="display: block; margin-bottom: 10px; color: var(--cool-gray); font-size: 0.9rem;">Upload Resume</label>
+                        <input type="file" name="resume" accept=".pdf,.doc,.docx" style="padding: 10px;">
                     </div>
                     <div class="form-group">
                         <textarea name="notes" placeholder="Additional Notes / Certifications Held" required></textarea>
@@ -117,9 +117,12 @@
                 } else {
                     statusMsg.innerHTML = "Transmission error. Please try again or contact us directly.";
                     statusMsg.style.color = "#FF5A00";
+                    statusMsg.style.marginTop = "15px";
                 }
             }).catch(error => {
                 statusMsg.innerHTML = "Transmission error. Check your connection and try again.";
+                statusMsg.style.color = "#FF5A00";
+                statusMsg.style.marginTop = "15px";
             });
         }
         form.addEventListener("submit", handleSubmit);
