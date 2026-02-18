@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Gulf South Infrared</title>
+    <meta name="description" content="Join the team at Gulf South Infrared. Submit your credentials for future UAS pilot or thermography opportunities.">
+    <link rel="canonical" href="https://gsithermal.com/careers.html">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared">
+            </a>
+        </div>
+        <nav>
+            <div class="dropdown">
+                <a href="index.html#services" class="nav-btn">Services ▾</a>
+                <div class="dropdown-content">
+                    <a href="roofing.html">Commercial Roofing</a>
+                    <a href="electrical.html">Electrical Systems</a>
+                    <a href="solar.html">Solar Infrastructure</a>
+                    <a href="industrial.html">Industrial Facilities</a>
+                    <a href="petrochemical.html">Petrochemical & Refining</a>
+                    <a href="envelope.html">Building Envelopes</a>
+                    <a href="maritime.html">Maritime & Offshore</a>
+                    <a href="datacenter.html">Data Centers</a>
+                    <a href="utilities.html">High-Voltage Utilities</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-btn" style="color: var(--infrared-orange);">Company ▾</a>
+                <div class="dropdown-content">
+                    <a href="safety.html">Safety & Compliance</a>
+                    <a href="service-area.html">Service Area</a>
+                    <a href="careers.html" style="color: var(--infrared-orange);">Careers</a>
+                </div>
+            </div>
+            <a href="index.html#standards" class="nav-btn">Standards</a>
+            <a href="contact.html" class="nav-btn" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
+        </nav>
+    </header>
+
+    <section class="sub-hero">
+        <h1>Join the GSI Team</h1>
+        <h2>Building a network of professional thermographers and UAS pilots.</h2>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Talent Pipeline</h2>
+                <p>We are consistently seeking certified experts to support our commercial & industrial operations. Submit your information to be considered for future forensic diagnostic deployments across the Gulf South.</p>
+                <div class="contact-details">
+                    <p><strong>UAS Operations:</strong> FAA Part 107 Required</p>
+                    <p><strong>Diagnostics:</strong> ITC Level II+ Preferred</p>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="gsi-careers-form" action="https://formspree.io/f/xdalzyyl" method="POST" enctype="multipart/form-data">
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <input type="text" name="first_name" placeholder="First Name*" required>
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <input type="text" name="last_name" placeholder="Last Name*" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Phone Number*" required>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 10px; color: var(--cool-gray); font-size: 0.9rem;">Upload Resume (PDF Preferred)*</label>
+                        <input type="file" name="resume" accept=".pdf,.doc,.docx" required style="padding: 10px;">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="notes" placeholder="Additional Notes / Certifications Held" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Submit</button>
+                    <p id="form-status"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
+        <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var form = document.getElementById("gsi-careers-form");
+        var statusMsg = document.getElementById("form-status");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var data = new FormData(event.target);
+            
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    statusMsg.innerHTML = "Success. Your information has been routed to our team.";
+                    statusMsg.style.color = "#00FF00";
+                    statusMsg.style.marginTop = "15px";
+                    form.reset();
+                } else {
+                    statusMsg.innerHTML = "Transmission error. Please try again or contact us directly.";
+                    statusMsg.style.color = "#FF5A00";
+                }
+            }).catch(error => {
+                statusMsg.innerHTML = "Transmission error. Check your connection and try again.";
+            });
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
+
+</body>
+</html>
