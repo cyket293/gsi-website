@@ -87,7 +87,6 @@
 
     <script>
         function openStep(evt, stepName) {
-            // 1. Hide all content boxes
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("protocol-content");
             for (i = 0; i < tabcontent.length; i++) {
@@ -95,15 +94,12 @@
                 tabcontent[i].classList.remove("active");
             }
 
-            // 2. Remove "active" class from all tab buttons
             tablinks = document.getElementsByClassName("protocol-tab");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
-            // 3. Show the specific clicked content and mark button as active
             document.getElementById(stepName).style.display = "block";
-            // Small delay to allow the fade animation to trigger
             setTimeout(() => {
                 document.getElementById(stepName).classList.add("active");
             }, 10);
