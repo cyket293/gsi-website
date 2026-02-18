@@ -29,33 +29,55 @@
         <h2>Forensic thermal analysis of vessels and offshore rig infrastructure.</h2>
     </section>
 
-    <section class="services-section">
-        <div class="service-detail">
-            <div class="service-header">
-                <h3>The GSI Diagnostic Protocol</h3>
-                <p>Prevent catastrophic equipment failure and marine fires by identifying mechanical friction and electrical resistance in extreme environments.</p>
+    <section class="protocol-section">
+        <div class="section-header">
+            <h2>The GSI Diagnostic Protocol</h2>
+            <p>Prevent catastrophic equipment failure and marine fires by identifying mechanical friction and electrical resistance in extreme environments.</p>
+        </div>
+
+        <div class="protocol-container">
+            <div class="protocol-list">
+                <button class="protocol-tab active" onclick="openStep(event, 'step1')">
+                    <span>01.</span> Vessel Assessment
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step2')">
+                    <span>02.</span> Data Collection
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step3')">
+                    <span>03.</span> Fault ID
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step4')">
+                    <span>04.</span> Reporting
+                </button>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>01. Vessel & Rig Assessment</h4>
+
+            <div class="protocol-display">
+                
+                <div id="step1" class="protocol-content active">
+                    <h3>Vessel & Rig Assessment</h3>
                     <p>We consult with chief engineers to map out critical propulsion systems, switchboards, and heavy deck machinery for targeted inspection.</p>
                 </div>
-                <div class="process-step">
-                    <h4>02. Marine-Grade Data Collection</h4>
+
+                <div id="step2" class="protocol-content">
+                    <h3>Marine-Grade Data Collection</h3>
                     <p>Operating within tight, complex compartments, we capture high-fidelity thermal signatures of live electrical panels and rotating equipment.</p>
                 </div>
-                <div class="process-step">
-                    <h4>03. Critical Fault Identification</h4>
+
+                <div id="step3" class="protocol-content">
+                    <h3>Critical Fault Identification</h3>
                     <p>We analyze the temperature gradients to uncover bearing degradation, exhaust leaks, phase imbalances, and overloaded circuits.</p>
                 </div>
-                <div class="process-step">
-                    <h4>04. Diagnostic Deliverables</h4>
+
+                <div id="step4" class="protocol-content">
+                    <h3>Diagnostic Deliverables</h3>
                     <p>We produce an objective defect report, giving your marine engineers the precise locations required to perform preventative maintenance while at sea or in port.</p>
                 </div>
+
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
-            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
         </div>
     </section>
 
@@ -63,6 +85,26 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openStep(evt, stepName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("protocol-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("protocol-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(stepName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(stepName).classList.add("active");
+            }, 10);
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
