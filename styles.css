@@ -176,10 +176,10 @@ nav .nav-btn:hover {
 }
 
 .service-card:hover::after {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     opacity: 1;
-    box-shadow: 2px -2px 10px rgba(255, 90, 0, 0.3);
+    filter: drop-shadow(0 0 5px var(--infrared-orange));
 }
 
 .service-card h3 { color: var(--infrared-orange); font-size: 1.4rem; margin-bottom: 15px; }
