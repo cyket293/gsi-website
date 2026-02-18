@@ -46,21 +46,19 @@
     </header>
 
     <section class="sub-hero">
-        <h1>Rapid Deployment</h1>
-        <h2>Mobilizing forensic thermal diagnostics across the Gulf South.</h2>
+        <h1>Operational Service Area</h1>
+        <h2>Forensic diagnostics deployed across the Gulf South.</h2>
     </section>
 
     <section class="protocol-section">
         <div class="section-header">
-            <h2>Operational Service Radius</h2>
-            <p>Hover over a state to view local coverage zones.</p>
+            <h2>Interactive Regional Map</h2>
+            <p>Select a state to view specific coverage hubs and deployment zones.</p>
         </div>
 
         <div class="map-wrapper">
-            <div class="map-aspect-ratio">
-                
-                <img src="images/map-base.jpg" class="map-layer base-layer" alt="Service Area Map">
-
+            <div class="map-aspect-ratio" style="padding-bottom: 66.66%;">
+                <img src="images/map-base.jpg" class="map-layer base-layer">
                 <img src="images/map-tx.png" class="map-layer highlight-layer" id="layer-tx">
                 <img src="images/map-la.png" class="map-layer highlight-layer" id="layer-la">
                 <img src="images/map-ms.png" class="map-layer highlight-layer" id="layer-ms">
@@ -69,114 +67,46 @@
                 <img src="images/map-ga.png" class="map-layer highlight-layer" id="layer-ga">
                 <img src="images/map-ar.png" class="map-layer highlight-layer" id="layer-ar">
 
-                <svg viewBox="0 0 1920 1080" class="map-sensors">
-                    
-                    <path d="M 400,400 L 600,400 L 600,800 L 400,800 Z" 
-                          onmouseenter="showState('layer-tx')" 
-                          onmouseleave="hideState('layer-tx')"
-                          onclick="scrollToCard('card-tx')">
-                    </path>
-
-                    <path d="M 610,650 L 750,650 L 750,750 L 610,750 Z" 
-                          onmouseenter="showState('layer-la')" 
-                          onmouseleave="hideState('layer-la')"
-                          onclick="scrollToCard('card-la')">
-                    </path>
-
-                    <path d="M 760,500 L 850,500 L 850,700 L 760,700 Z" 
-                          onmouseenter="showState('layer-ms')" 
-                          onmouseleave="hideState('layer-ms')"
-                          onclick="scrollToCard('card-ms')">
-                    </path>
-
-                    <path d="M 860,500 L 950,500 L 950,700 L 860,700 Z" 
-                          onmouseenter="showState('layer-al')" 
-                          onmouseleave="hideState('layer-al')"
-                          onclick="scrollToCard('card-al')">
-                    </path>
-
-                    <path d="M 960,450 L 1100,450 L 1100,650 L 960,650 Z" 
-                          onmouseenter="showState('layer-ga')" 
-                          onmouseleave="hideState('layer-ga')"
-                          onclick="scrollToCard('card-ga')">
-                    </path>
-
-                    <path d="M 960,710 L 1200,850 L 1100,950 L 900,750 Z" 
-                          onmouseenter="showState('layer-fl')" 
-                          onmouseleave="hideState('layer-fl')"
-                          onclick="scrollToCard('card-fl')">
-                    </path>
-
-                    <path d="M 550,350 L 700,350 L 700,500 L 550,500 Z" 
-                          onmouseenter="showState('layer-ar')" 
-                          onmouseleave="hideState('layer-ar')"
-                          onclick="scrollToCard('card-ar')">
-                    </path>
-
+                <svg viewBox="0 0 1200 800" class="map-sensors">
+                    <path id="sensor-tx" d="M150,280 L380,290 L450,550 L380,750 L180,680 L80,520 Z" onmouseenter="activate('tx')" onmouseleave="deactivate('tx')" onclick="scrollToCard('card-tx')"></path>
+                    <path id="sensor-ar" d="M460,250 L630,240 L640,430 L470,440 Z" onmouseenter="activate('ar')" onmouseleave="deactivate('ar')" onclick="scrollToCard('card-ar')"></path>
+                    <path id="sensor-la" d="M475,450 L630,445 L630,620 L760,650 L750,750 L480,750 Z" onmouseenter="activate('la')" onmouseleave="deactivate('la')" onclick="scrollToCard('card-la')"></path>
+                    <path id="sensor-ms" d="M650,330 L780,320 L800,620 L650,620 Z" onmouseenter="activate('ms')" onmouseleave="deactivate('ms')" onclick="scrollToCard('card-ms')"></path>
+                    <path id="sensor-al" d="M790,320 L910,310 L940,600 L870,610 L840,750 L800,620 Z" onmouseenter="activate('al')" onmouseleave="deactivate('al')" onclick="scrollToCard('card-al')"></path>
+                    <path id="sensor-ga" d="M920,290 L1080,280 L1100,530 L950,580 Z" onmouseenter="activate('ga')" onmouseleave="deactivate('ga')" onclick="scrollToCard('card-ga')"></path>
+                    <path id="sensor-fl" d="M850,620 L1150,650 L1180,800 L1000,950 L950,700 Z" onmouseenter="activate('fl')" onmouseleave="deactivate('fl')" onclick="scrollToCard('card-fl')"></path>
                 </svg>
             </div>
         </div>
 
-        <div class="protocol-container" style="display: block; border: none; background: transparent; margin-top: 50px;">
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                
-                <div class="service-card" id="card-la">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Louisiana</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--infrared-orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    </div>
-                    <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Primary Headquarters</p>
-                    <p>New Orleans, Baton Rouge, Lafayette, Lake Charles, Shreveport, Northshore</p>
-                </div>
-
-                <div class="service-card" id="card-tx">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Texas</h3>
-                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Western Sector</span>
-                    </div>
-                    <p>Houston, Beaumont, Port Arthur, Galveston, East Texas Energy Corridor</p>
-                </div>
-
-                <div class="service-card" id="card-ms">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Mississippi</h3>
-                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Central Sector</span>
-                    </div>
-                    <p>Gulfport, Biloxi, Pascagoula, Hattiesburg, Jackson</p>
-                </div>
-
-                <div class="service-card" id="card-al">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Alabama</h3>
-                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Eastern Sector</span>
-                    </div>
-                    <p>Mobile, Baldwin County, Port of Mobile, Birmingham</p>
-                </div>
-
-                <div class="service-card" id="card-fl">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Florida</h3>
-                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Panhandle Sector</span>
-                    </div>
-                    <p>Pensacola, Destin, Panama City, Tallahassee</p>
-                </div>
-
-                <div class="service-card" id="card-ga">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Georgia</h3>
-                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Atlantic Sector</span>
-                    </div>
-                    <p>Atlanta, Savannah, Augusta, Columbus</p>
-                </div>
-
-                <div class="service-card" id="card-ar">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
-                        <h3 style="margin: 0; font-size: 1.8rem;">Arkansas</h3>
-                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Northern Sector</span>
-                    </div>
-                    <p>Little Rock, Texarkana, El Dorado, Hot Springs</p>
-                </div>
-
+        <div class="services-grid" style="margin-top: 60px;">
+            <div class="service-card" id="card-la">
+                <h3>Louisiana</h3>
+                <p>New Orleans, Baton Rouge, Lafayette, Lake Charles, Shreveport, Northshore</p>
+            </div>
+            <div class="service-card" id="card-tx">
+                <h3>Texas</h3>
+                <p>Houston, Beaumont, Port Arthur, Galveston, East Texas Energy Corridor</p>
+            </div>
+            <div class="service-card" id="card-ms">
+                <h3>Mississippi</h3>
+                <p>Gulfport, Biloxi, Pascagoula, Hattiesburg, Jackson</p>
+            </div>
+            <div class="service-card" id="card-al">
+                <h3>Alabama</h3>
+                <p>Mobile, Baldwin County, Port of Mobile, Birmingham</p>
+            </div>
+            <div class="service-card" id="card-ar">
+                <h3>Arkansas</h3>
+                <p>Little Rock, Texarkana, El Dorado, Hot Springs</p>
+            </div>
+            <div class="service-card" id="card-ga">
+                <h3>Georgia</h3>
+                <p>Atlanta, Savannah, Augusta, Columbus</p>
+            </div>
+            <div class="service-card" id="card-fl">
+                <h3>Florida</h3>
+                <p>Pensacola, Destin, Panama City, Tallahassee</p>
             </div>
         </div>
     </section>
@@ -187,32 +117,27 @@
     </footer>
 
     <script>
-        function showState(layerId) {
-            document.getElementById(layerId).style.opacity = '1';
+        function activate(id) {
+            document.getElementById('layer-' + id).style.opacity = '1';
+            document.getElementById('card-' + id).style.borderColor = 'var(--infrared-orange)';
+            document.getElementById('card-' + id).style.transform = 'translateY(-5px)';
         }
-
-        function hideState(layerId) {
-            document.getElementById(layerId).style.opacity = '0';
+        function deactivate(id) {
+            document.getElementById('layer-' + id).style.opacity = '0';
+            document.getElementById('card-' + id).style.borderColor = 'rgba(136, 146, 176, 0.1)';
+            document.getElementById('card-' + id).style.transform = 'translateY(0)';
         }
-
-        function scrollToCard(cardId) {
-            const element = document.getElementById(cardId);
+        function scrollToCard(id) {
+            const el = document.getElementById('card-' + id);
             const headerOffset = 140;
-            const elementPosition = element.getBoundingClientRect().top;
+            const elementPosition = el.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
             window.scrollTo({
                 top: offsetPosition,
-                behavior: "smooth"
+                behavior: 'smooth'
             });
-            
-            // Highlight the card temporarily
-            element.style.borderColor = "var(--infrared-orange)";
-            setTimeout(() => {
-                element.style.borderColor = "rgba(136, 146, 176, 0.1)";
-            }, 1000);
         }
     </script>
-
 </body>
 </html>
