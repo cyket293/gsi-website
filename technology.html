@@ -17,7 +17,17 @@
                 <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared">
             </a>
         </div>
-        <nav>
+
+        <div class="mobile-controls">
+            <a href="contact.html" class="mobile-cta">Contact</a>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav id="main-nav">
             <div class="dropdown">
                 <a href="index.html#services" class="nav-btn">Services ▾</a>
                 <div class="dropdown-content">
@@ -35,14 +45,15 @@
             <div class="dropdown">
                 <a href="#" class="nav-btn" style="color: var(--infrared-orange);">Company ▾</a>
                 <div class="dropdown-content">
-                    <a href="service-area.html">Service Area</a>
                     <a href="safety.html">Safety & Compliance</a>
-                    <a href="technology.html">Technology</a>
+                    <a href="service-area.html">Service Area</a>
                     <a href="careers.html">Careers</a>
+                    <a href="technology.html" style="color: var(--infrared-orange);">Technology</a>
                 </div>
             </div>
             <a href="index.html#standards" class="nav-btn">Standards</a>
-            <a href="contact.html" class="nav-btn" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
+            
+            <a href="contact.html" class="nav-btn desktop-only" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
         </nav>
     </header>
 
@@ -60,8 +71,8 @@
         <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
             
             <div class="service-card">
-                <h3>Enterprise Platform</h3>
-                <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 15px;">Mission Profile: All-Weather Industrial Inspection</p>
+                <h3>Enterprise Aerial Platform</h3>
+                <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 15px;">Profile: All-Weather Industrial Inspection</p>
                 <ul style="color: var(--cool-gray); list-style: none; padding: 0; line-height: 2;">
                     <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Thermal Sensor:</strong> 640 × 512 Radiometric (30Hz)</li>
                     <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Visual Sensor:</strong> 48MP 1/1.3" CMOS (High-Res Zoom)</li>
@@ -73,8 +84,8 @@
             </div>
 
             <div class="service-card">
-                <h3>Thermography Units</h3>
-                <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 15px;">Mission Profile: Electrical Panels & Data Centers</p>
+                <h3>Handheld Thermography Units</h3>
+                <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 15px;">Profile: Electrical Panels & Data Centers</p>
                 <ul style="color: var(--cool-gray); list-style: none; padding: 0; line-height: 2;">
                     <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Sensor Resolution:</strong> 320 × 240 Radiometric</li>
                     <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Temp Range:</strong> -20°C to 550°C</li>
@@ -90,7 +101,7 @@
             <div class="contact-info">
                 <h2>Radiometric Analysis</h2>
                 <p>Data collection is only the first step. We utilize industry-leading post-processing software to analyze every pixel of data captured in the field.</p>
-                <p style="margin-top: 20px;">This workflow allows us to adjust emissivity values for specific materials (e.g., concrete vs. metal), tune thermal spans to highlight subtle anomalies, and generate audit-ready reports that comprehensive and satisfy insurance and maintenance requirements.</p>
+                <p style="margin-top: 20px;">This workflow allows us to adjust emissivity values for specific materials (e.g., concrete vs. metal), tune thermal spans to highlight subtle anomalies, and generate audit-ready reports that are comprehensive and satisfy insurance requirements.</p>
             </div>
             <div class="contact-form" style="background: transparent; border: 1px solid var(--infrared-orange); text-align: center; display: flex; flex-direction: column; justify-content: center;">
                 <h3 style="color: var(--infrared-orange);">Deliverables</h3>
@@ -115,6 +126,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        /* Mobile Menu Toggle */
+        function toggleMenu() {
+            var nav = document.getElementById("main-nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
