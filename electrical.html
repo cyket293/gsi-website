@@ -29,33 +29,55 @@
         <h2>Identify resistance and thermal anomalies in live electrical systems.</h2>
     </section>
 
-    <section class="services-section">
-        <div class="service-detail">
-            <div class="service-header">
-                <h3>The GSI Diagnostic Protocol</h3>
-                <p>Detect overheating components, phase imbalances, and loose terminations before they lead to critical failures, arcing, or unexpected downtime.</p>
+    <section class="protocol-section">
+        <div class="section-header">
+            <h2>The GSI Diagnostic Protocol</h2>
+            <p>Detect overheating components, phase imbalances, and loose terminations before they lead to critical failures, arcing, or unexpected downtime.</p>
+        </div>
+
+        <div class="protocol-container">
+            <div class="protocol-list">
+                <button class="protocol-tab active" onclick="openStep(event, 'step1')">
+                    <span>01.</span> Asset Evaluation
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step2')">
+                    <span>02.</span> Infrared Scanning
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step3')">
+                    <span>03.</span> Anomaly Detection
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step4')">
+                    <span>04.</span> Reporting
+                </button>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>01. Asset Evaluation</h4>
+
+            <div class="protocol-display">
+                
+                <div id="step1" class="protocol-content active">
+                    <h3>Asset Evaluation</h3>
                     <p>We coordinate with your facility managers to identify high-load connection points, switchgear, and critical distribution panels for inspection.</p>
                 </div>
-                <div class="process-step">
-                    <h4>02. Non-Contact Infrared Scanning</h4>
+
+                <div id="step2" class="protocol-content">
+                    <h3>Non-Contact Infrared Scanning</h3>
                     <p>Operating safely outside the arc flash boundary, we capture the temperature differentials and thermal signatures of live electrical systems under normal load.</p>
                 </div>
-                <div class="process-step">
-                    <h4>03. Anomaly Identification</h4>
+
+                <div id="step3" class="protocol-content">
+                    <h3>Anomaly Identification</h3>
                     <p>We analyze the data to detect early indicators of failure, including high-resistance terminations, overloaded circuits, and degrading contactors.</p>
                 </div>
-                <div class="process-step">
-                    <h4>04. Diagnostic Reporting</h4>
+
+                <div id="step4" class="protocol-content">
+                    <h3>Diagnostic Reporting</h3>
                     <p>We provide a detailed thermal report documenting the exact location and severity of each hotspot, enabling your licensed electricians to prioritize preventative maintenance.</p>
                 </div>
+
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
-            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
         </div>
     </section>
 
@@ -63,6 +85,26 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openStep(evt, stepName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("protocol-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("protocol-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(stepName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(stepName).classList.add("active");
+            }, 10);
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
