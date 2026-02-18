@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Service Area | Gulf South Infrared</title>
-    <meta name="description" content="Thermal inspection service area covering Louisiana, Texas, Mississippi, Alabama, Florida, and Arkansas. Rapid deployment for critical infrastructure.">
+    <meta name="description" content="Thermal inspection service area covering Louisiana, Texas, Mississippi, Alabama, Florida, Georgia, and Arkansas.">
     <link rel="canonical" href="https://gsithermal.com/service-area.html">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -53,95 +53,130 @@
     <section class="protocol-section">
         <div class="section-header">
             <h2>Operational Service Radius</h2>
-            <p>Headquartered in Louisiana, we provide rapid response capabilities from East Texas to Florida.</p>
+            <p>Hover over a state to view local coverage zones.</p>
         </div>
 
-        <div class="protocol-container" style="display: block; border: none; background: transparent;">
-            
+        <div class="map-wrapper">
+            <div class="map-aspect-ratio">
+                
+                <img src="images/map-base.jpg" class="map-layer base-layer" alt="Service Area Map">
+
+                <img src="images/map-tx.png" class="map-layer highlight-layer" id="layer-tx">
+                <img src="images/map-la.png" class="map-layer highlight-layer" id="layer-la">
+                <img src="images/map-ms.png" class="map-layer highlight-layer" id="layer-ms">
+                <img src="images/map-al.png" class="map-layer highlight-layer" id="layer-al">
+                <img src="images/map-fl.png" class="map-layer highlight-layer" id="layer-fl">
+                <img src="images/map-ga.png" class="map-layer highlight-layer" id="layer-ga">
+                <img src="images/map-ar.png" class="map-layer highlight-layer" id="layer-ar">
+
+                <svg viewBox="0 0 1920 1080" class="map-sensors">
+                    
+                    <path d="M 400,400 L 600,400 L 600,800 L 400,800 Z" 
+                          onmouseenter="showState('layer-tx')" 
+                          onmouseleave="hideState('layer-tx')"
+                          onclick="scrollToCard('card-tx')">
+                    </path>
+
+                    <path d="M 610,650 L 750,650 L 750,750 L 610,750 Z" 
+                          onmouseenter="showState('layer-la')" 
+                          onmouseleave="hideState('layer-la')"
+                          onclick="scrollToCard('card-la')">
+                    </path>
+
+                    <path d="M 760,500 L 850,500 L 850,700 L 760,700 Z" 
+                          onmouseenter="showState('layer-ms')" 
+                          onmouseleave="hideState('layer-ms')"
+                          onclick="scrollToCard('card-ms')">
+                    </path>
+
+                    <path d="M 860,500 L 950,500 L 950,700 L 860,700 Z" 
+                          onmouseenter="showState('layer-al')" 
+                          onmouseleave="hideState('layer-al')"
+                          onclick="scrollToCard('card-al')">
+                    </path>
+
+                    <path d="M 960,450 L 1100,450 L 1100,650 L 960,650 Z" 
+                          onmouseenter="showState('layer-ga')" 
+                          onmouseleave="hideState('layer-ga')"
+                          onclick="scrollToCard('card-ga')">
+                    </path>
+
+                    <path d="M 960,710 L 1200,850 L 1100,950 L 900,750 Z" 
+                          onmouseenter="showState('layer-fl')" 
+                          onmouseleave="hideState('layer-fl')"
+                          onclick="scrollToCard('card-fl')">
+                    </path>
+
+                    <path d="M 550,350 L 700,350 L 700,500 L 550,500 Z" 
+                          onmouseenter="showState('layer-ar')" 
+                          onmouseleave="hideState('layer-ar')"
+                          onclick="scrollToCard('card-ar')">
+                    </path>
+
+                </svg>
+            </div>
+        </div>
+
+        <div class="protocol-container" style="display: block; border: none; background: transparent; margin-top: 50px;">
             <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
                 
-                <div class="service-card">
+                <div class="service-card" id="card-la">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.8rem;">Louisiana</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--infrared-orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--infrared-orange)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                     </div>
                     <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Primary Headquarters</p>
                     <p>New Orleans, Baton Rouge, Lafayette, Lake Charles, Shreveport, Northshore</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="card-tx">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.8rem;">Texas</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cool-gray)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="6" x2="16" y2="22"></line>
-                        </svg>
+                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Western Sector</span>
                     </div>
-                    <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Western Sector</p>
                     <p>Houston, Beaumont, Port Arthur, Galveston, East Texas Energy Corridor</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="card-ms">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.8rem;">Mississippi</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cool-gray)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="6" x2="16" y2="22"></line>
-                        </svg>
+                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Central Sector</span>
                     </div>
-                    <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Central Sector</p>
                     <p>Gulfport, Biloxi, Pascagoula, Hattiesburg, Jackson</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="card-al">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.8rem;">Alabama</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cool-gray)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="6" x2="16" y2="22"></line>
-                        </svg>
+                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Eastern Sector</span>
                     </div>
-                    <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Eastern Sector</p>
                     <p>Mobile, Baldwin County, Port of Mobile, Birmingham</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="card-fl">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.8rem;">Florida</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cool-gray)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="6" x2="16" y2="22"></line>
-                        </svg>
+                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Panhandle Sector</span>
                     </div>
-                    <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Panhandle Sector</p>
                     <p>Pensacola, Destin, Panama City, Tallahassee</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card" id="card-ga">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
+                        <h3 style="margin: 0; font-size: 1.8rem;">Georgia</h3>
+                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Atlantic Sector</span>
+                    </div>
+                    <p>Atlanta, Savannah, Augusta, Columbus</p>
+                </div>
+
+                <div class="service-card" id="card-ar">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px;">
                         <h3 style="margin: 0; font-size: 1.8rem;">Arkansas</h3>
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--cool-gray)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                            <line x1="8" y1="2" x2="8" y2="18"></line>
-                            <line x1="16" y1="6" x2="16" y2="22"></line>
-                        </svg>
+                        <span style="color: var(--cool-gray); font-size: 0.9rem; border: 1px solid rgba(136, 146, 176, 0.2); padding: 5px 10px; border-radius: 4px;">Northern Sector</span>
                     </div>
-                    <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 10px;">Northern Sector</p>
                     <p>Little Rock, Texarkana, El Dorado, Hot Springs</p>
                 </div>
 
-            </div>
-
-            <div style="text-align: center; margin-top: 60px;">
-                <p style="color: var(--cool-gray); margin-bottom: 30px;">*For emergency deployments or projects outside our primary radius, please contact Operations.</p>
-                <a href="contact.html" class="cta-button">Check Availability</a>
             </div>
         </div>
     </section>
@@ -150,6 +185,34 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showState(layerId) {
+            document.getElementById(layerId).style.opacity = '1';
+        }
+
+        function hideState(layerId) {
+            document.getElementById(layerId).style.opacity = '0';
+        }
+
+        function scrollToCard(cardId) {
+            const element = document.getElementById(cardId);
+            const headerOffset = 140;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+            
+            // Highlight the card temporarily
+            element.style.borderColor = "var(--infrared-orange)";
+            setTimeout(() => {
+                element.style.borderColor = "rgba(136, 146, 176, 0.1)";
+            }, 1000);
+        }
+    </script>
 
 </body>
 </html>
