@@ -29,33 +29,55 @@
         <h2>Detect insulation voids, hidden air leaks, and HVAC inefficiencies.</h2>
     </section>
 
-    <section class="services-section">
-        <div class="service-detail">
-            <div class="service-header">
-                <h3>The GSI Diagnostic Protocol</h3>
-                <p>Optimize facility energy consumption and reduce operational overhead by identifying unseen thermal bridges and envelope failures.</p>
+    <section class="protocol-section">
+        <div class="section-header">
+            <h2>The GSI Diagnostic Protocol</h2>
+            <p>Optimize facility energy consumption and reduce operational overhead by identifying unseen thermal bridges and envelope failures.</p>
+        </div>
+
+        <div class="protocol-container">
+            <div class="protocol-list">
+                <button class="protocol-tab active" onclick="openStep(event, 'step1')">
+                    <span>01.</span> Baseline Check
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step2')">
+                    <span>02.</span> Thermal Imaging
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step3')">
+                    <span>03.</span> Forensic Analysis
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step4')">
+                    <span>04.</span> Defect Mapping
+                </button>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>01. Environmental Baseline</h4>
+
+            <div class="protocol-display">
+                
+                <div id="step1" class="protocol-content active">
+                    <h3>Environmental Baseline</h3>
                     <p>We assess the commercial structure to ensure optimal indoor/outdoor temperature differentials (Delta-T) for maximum scanning accuracy.</p>
                 </div>
-                <div class="process-step">
-                    <h4>02. Comprehensive Thermal Imaging</h4>
+
+                <div id="step2" class="protocol-content">
+                    <h3>Comprehensive Thermal Imaging</h3>
                     <p>Utilizing aerial and handheld thermography, we map the exterior facades, roofing interfaces, and interior perimeters.</p>
                 </div>
-                <div class="process-step">
-                    <h4>03. Forensic Analysis</h4>
+
+                <div id="step3" class="protocol-content">
+                    <h3>Forensic Analysis</h3>
                     <p>We review the infrared data to pinpoint missing insulation, moisture intrusion, and significant HVAC exfiltration pathways.</p>
                 </div>
-                <div class="process-step">
-                    <h4>04. Objective Defect Mapping</h4>
+
+                <div id="step4" class="protocol-content">
+                    <h3>Objective Defect Mapping</h3>
                     <p>We provide a data-rich report detailing exact areas of energy loss, empowering your contractors to seal the envelope and improve HVAC efficiency.</p>
                 </div>
+
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
-            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
         </div>
     </section>
 
@@ -63,6 +85,26 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openStep(evt, stepName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("protocol-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("protocol-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(stepName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(stepName).classList.add("active");
+            }, 10);
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
