@@ -7,7 +7,6 @@
     <meta name="description" content="Non-destructive moisture detection for commercial roofs. Identify subsurface entrapment and insulation failure before structural damage occurs.">
     <link rel="canonical" href="https://gsithermal.com/roofing.html">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
 
@@ -29,33 +28,55 @@
         <h2>Non-destructive moisture detection and insulation analysis.</h2>
     </section>
 
-    <section class="services-section">
-        <div class="service-detail">
-            <div class="service-header">
-                <h3>The GSI Diagnostic Protocol</h3>
-                <p>Identify hidden moisture entrapment through thermal contrast to prevent costly structural degradation and streamline targeted repairs.</p>
+    <section class="protocol-section">
+        <div class="section-header">
+            <h2>The GSI Diagnostic Protocol</h2>
+            <p>Select a phase below to explore our forensic moisture detection process.</p>
+        </div>
+
+        <div class="protocol-container">
+            <div class="protocol-list">
+                <button class="protocol-tab active" onclick="openStep(event, 'step1')">
+                    <span>01.</span> Site Inspection
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step2')">
+                    <span>02.</span> Data Capture
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step3')">
+                    <span>03.</span> Forensic Analysis
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step4')">
+                    <span>04.</span> Defect Mapping
+                </button>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>01. Site Inspection & Protocol Design</h4>
-                    <p>We evaluate your roof envelope to determine the optimal environmental conditions for maximizing thermal contrast during the scanning process.</p>
+
+            <div class="protocol-display">
+                
+                <div id="step1" class="protocol-content active">
+                    <h3>Site Inspection & Protocol Design</h3>
+                    <p>Before deployment, we evaluate your roof envelope to determine the optimal environmental conditions for scanning. This involves analyzing the roof membrane type (TPO, EPDM, Built-Up), insulation composition, and current weather patterns to ensure maximum "Delta-T" (thermal contrast) between dry and wet substrate.</p>
                 </div>
-                <div class="process-step">
-                    <h4>02. Radiometric Data Collection</h4>
-                    <p>Utilizing enterprise aerial thermography, we capture high-resolution thermal imagery across the entire membrane, detecting the specific heat signatures of trapped water.</p>
+
+                <div id="step2" class="protocol-content">
+                    <h3>Radiometric Data Collection</h3>
+                    <p>Utilizing enterprise aerial thermography, we execute a pre-programmed autonomous flight path to capture high-resolution thermal imagery across 100% of the membrane. This ensures consistent angle and distance, detecting the specific heat capacitance signatures of trapped subsurface water.</p>
                 </div>
-                <div class="process-step">
-                    <h4>03. Forensic Thermal Analysis</h4>
-                    <p>Our experts analyze the thermograms to differentiate between harmless surface anomalies and true subsurface moisture entrapment or insulation degradation.</p>
+
+                <div id="step3" class="protocol-content">
+                    <h3>Forensic Thermal Analysis</h3>
+                    <p>Data is analyzed by certified thermographers to differentiate between false positives (like surface reflections, HVAC exhaust, or standing water) and true subsurface moisture entrapment. We isolate the thermal anomalies that indicate insulation degradation and structural risk.</p>
                 </div>
-                <div class="process-step">
-                    <h4>04. Objective Defect Mapping</h4>
-                    <p>We deliver a comprehensive, data-rich report that pinpoints the exact locations of compromised roofing, allowing your contractors to execute precise, cost-effective repairs.</p>
+
+                <div id="step4" class="protocol-content">
+                    <h3>Objective Defect Mapping</h3>
+                    <p>We deliver a comprehensive forensic report that pinpoints the exact GPS coordinates of every compromised section. This allows your roofing contractor to surgical remove and replace only the wet insulation, rather than quoting you for a complete roof replacement.</p>
                 </div>
+
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
-            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
         </div>
     </section>
 
@@ -63,6 +84,33 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openStep(evt, stepName) {
+            // 1. Hide all content boxes
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("protocol-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+
+            // 2. Remove "active" class from all tab buttons
+            tablinks = document.getElementsByClassName("protocol-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // 3. Show the specific clicked content and mark button as active
+            document.getElementById(stepName).style.display = "block";
+            // Small delay to allow the fade animation to trigger
+            setTimeout(() => {
+                document.getElementById(stepName).classList.add("active");
+            }, 10);
+            
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
