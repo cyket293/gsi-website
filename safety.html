@@ -17,7 +17,17 @@
                 <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared">
             </a>
         </div>
-        <nav>
+
+        <div class="mobile-controls">
+            <a href="contact.html" class="mobile-cta">Contact</a>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav id="main-nav">
             <div class="dropdown">
                 <a href="index.html#services" class="nav-btn">Services ▾</a>
                 <div class="dropdown-content">
@@ -36,19 +46,20 @@
                 <a href="#" class="nav-btn" style="color: var(--infrared-orange);">Company ▾</a>
                 <div class="dropdown-content">
                     <a href="service-area.html">Service Area</a>
-                    <a href="safety.html">Safety & Compliance</a>
+                    <a href="safety.html" style="color: var(--infrared-orange);">Safety & Compliance</a>
                     <a href="technology.html">Technology</a>
                     <a href="careers.html">Careers</a>
                 </div>
             </div>
             <a href="index.html#standards" class="nav-btn">Standards</a>
-            <a href="contact.html" class="nav-btn" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
+            
+            <a href="contact.html" class="nav-btn desktop-only" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
         </nav>
     </header>
 
     <section class="sub-hero">
         <h1>Operational Safety</h1>
-        <h2>Rigorous flight planning and industrial hazard mitigation.</h2>
+        <h2>Rigorous planning and industrial hazard mitigation.</h2>
     </section>
 
     <section class="protocol-section">
@@ -61,22 +72,22 @@
             <div style="background-color: var(--deep-slate); padding: 40px; border-radius: 10px; border: 1px solid rgba(136, 146, 176, 0.1); width: 100%;">
                 <h3 style="color: var(--infrared-orange); margin-top: 0;">Zero-Compromise Approach</h3>
                 <p style="color: var(--cool-gray); line-height: 1.8;">
-                    Gulf South Infrared adheres to a strict "Safety First" doctrine. Before any rotor spins, we conduct a comprehensive job site analysis to identify electromagnetic interference, aerial obstructions, and ground-based hazards. We maintain full compliance with <strong>FAA Part 107</strong> regulations, ensuring all operations remain within legal and safe flight envelopes.
+                    Gulf South Infrared adheres to a strict "Safety First" doctrine. Before any project begins, we conduct a comprehensive job site analysis to identify electromagnetic interference, aerial obstructions, and ground-based hazards.
                 </p>
                 <p style="color: var(--cool-gray); line-height: 1.8;">
-                    Our pilots are trained to respect the specific PPE and communication protocols of active industrial sites, from petrochemical refineries to active construction zones. We do not just fly; we integrate into your operational workflow.
+                    Our teams are trained to respect the specific PPE and communication protocols of active industrial sites, from petrochemical refineries to active construction zones. We integrate into your operational workflow.
                 </p>
             </div>
         </div>
 
         <div class="services-grid" style="margin-top: 50px;">
             <div class="service-card">
-                <h3>FAA Compliance</h3>
-                <p>All flights are conducted by FAA Part 107 Certified Commercial Drone Pilots, strictly adhering to airspace authorizations and altitude restrictions.</p>
+                <h3>Regulatory Compliance</h3>
+                <p>All flights are conducted by FAA Certified Pilots, strictly adhering to airspace authorizations and altitude restrictions.</p>
             </div>
             <div class="service-card">
                 <h3>Risk Assessment</h3>
-                <p>Mandatory pre-flight risk assessments (JSA/JHA) are performed on-site to account for weather, radio interference, and personnel movement.</p>
+                <p>Mandatory pre-inspection risk assessments (JSA/JHA) are performed on-site to account for weather, radio interference, and personnel movement.</p>
             </div>
             <div class="service-card">
                 <h3>Site Integration</h3>
@@ -91,7 +102,7 @@
 
     <footer>
         <div style="text-align: center; padding: 40px 20px; background-color: #071121;">
-            <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo" style="height: 30px; margin-bottom: 20px;
+            <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo" style="height: 30px; margin-bottom: 20px;">
             <p style="color: var(--cool-gray); font-size: 0.9rem; margin-bottom: 10px;">&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
             <div style="font-size: 0.85rem;">
                 <a href="privacy.html" style="color: var(--cool-gray); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
@@ -99,6 +110,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        /* Mobile Menu Toggle */
+        function toggleMenu() {
+            var nav = document.getElementById("main-nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
