@@ -176,10 +176,11 @@ nav .nav-btn:hover {
 }
 
 .service-card:hover::after {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     opacity: 1;
-    filter: drop-shadow(0 0 5px var(--infrared-orange));
+    box-shadow: none; /* Removed to fix the "ghost box" issue */
+    filter: none;
 }
 
 .service-card h3 { color: var(--infrared-orange); font-size: 1.4rem; margin-bottom: 15px; }
