@@ -29,33 +29,55 @@
         <h2>Aerial thermal inspections of transmission lines and substations.</h2>
     </section>
 
-    <section class="services-section">
-        <div class="service-detail">
-            <div class="service-header">
-                <h3>The GSI Diagnostic Protocol</h3>
-                <p>Detect resistance and prevent grid-level outages with rapid, safe, and scalable aerial thermography.</p>
+    <section class="protocol-section">
+        <div class="section-header">
+            <h2>The GSI Diagnostic Protocol</h2>
+            <p>Detect resistance and prevent grid-level outages with rapid, safe, and scalable aerial thermography.</p>
+        </div>
+
+        <div class="protocol-container">
+            <div class="protocol-list">
+                <button class="protocol-tab active" onclick="openStep(event, 'step1')">
+                    <span>01.</span> Grid Mapping
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step2')">
+                    <span>02.</span> Aerial Scanning
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step3')">
+                    <span>03.</span> Fault Detection
+                </button>
+                <button class="protocol-tab" onclick="openStep(event, 'step4')">
+                    <span>04.</span> Reporting
+                </button>
             </div>
-            <div class="process-grid">
-                <div class="process-step">
-                    <h4>01. Corridor & Substation Mapping</h4>
+
+            <div class="protocol-display">
+                
+                <div id="step1" class="protocol-content active">
+                    <h3>Corridor & Substation Mapping</h3>
                     <p>We plan autonomous and manual drone flight paths to efficiently cover miles of transmission corridors and complex substation layouts.</p>
                 </div>
-                <div class="process-step">
-                    <h4>02. Aerial Radiometric Scanning</h4>
+
+                <div id="step2" class="protocol-content">
+                    <h3>Aerial Radiometric Scanning</h3>
                     <p>Flying safely outside the approach boundaries, our enterprise drones capture high-resolution thermal data of transformers, insulators, and splices.</p>
                 </div>
-                <div class="process-step">
-                    <h4>03. High-Resistance Detection</h4>
+
+                <div id="step3" class="protocol-content">
+                    <h3>High-Resistance Detection</h3>
                     <p>We analyze the thermograms to identify failing components, severe corona discharge heat, loose connections, and cooling oil anomalies.</p>
                 </div>
-                <div class="process-step">
-                    <h4>04. Grid-Level Deliverables</h4>
+
+                <div id="step4" class="protocol-content">
+                    <h3>Grid-Level Deliverables</h3>
                     <p>We provide a highly accurate defect report with geo-tagged thermal evidence, allowing your linemen to prioritize repairs and fortify the power grid.</p>
                 </div>
+
             </div>
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
-            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="contact.html" class="cta-button">Schedule a Diagnostic &rarr;</a>
         </div>
     </section>
 
@@ -63,6 +85,26 @@
         <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo">
         <p>&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openStep(evt, stepName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("protocol-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("protocol-tab");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(stepName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(stepName).classList.add("active");
+            }, 10);
+            evt.currentTarget.className += " active";
+        }
+    </script>
 
 </body>
 </html>
