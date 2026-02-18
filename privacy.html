@@ -17,7 +17,17 @@
                 <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared">
             </a>
         </div>
-        <nav>
+
+        <div class="mobile-controls">
+            <a href="contact.html" class="mobile-cta">Contact</a>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <nav id="main-nav">
             <div class="dropdown">
                 <a href="index.html#services" class="nav-btn">Services ▾</a>
                 <div class="dropdown-content">
@@ -42,7 +52,8 @@
                 </div>
             </div>
             <a href="index.html#standards" class="nav-btn">Standards</a>
-            <a href="contact.html" class="nav-btn" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
+            
+            <a href="contact.html" class="nav-btn desktop-only" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
         </nav>
     </header>
 
@@ -95,6 +106,14 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        /* Mobile Menu Toggle */
+        function toggleMenu() {
+            var nav = document.getElementById("main-nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 
 </body>
 </html>
