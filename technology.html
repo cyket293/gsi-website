@@ -1,139 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology & Fleet | Gulf South Infrared</title>
     <meta name="description" content="Our thermal inspection fleet utilizes enterprise-grade radiometric sensors. IP55-rated all-weather diagnostics with 640x512 thermal resolution.">
     <link rel="canonical" href="https://gsithermal.com/technology.html">
-    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { theme: { extend: { colors: { navy: '#0A192F', slate: '#112240', gray: '#8892B0', orange: '#FF5A00', white: '#FFFFFF' } } } }
+    </script>
+    <style>
+        body { font-family: 'Avenir', sans-serif; background-color: #0A192F; color: #FFFFFF; }
+        [x-cloak] { display: none !important; }
+    </style>
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
-<body>
+<body class="antialiased selection:bg-orange selection:text-white" x-data="{ mobileMenuOpen: false }">
 
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared">
+    <header class="fixed w-full top-0 z-50 bg-navy border-b border-slate py-4">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="index.html" class="flex-shrink-0 z-50 relative">
+                <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared" class="h-10 md:h-12 w-auto">
             </a>
-        </div>
-
-        <div class="mobile-controls">
-            <a href="contact.html" class="mobile-cta">Contact</a>
-            <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <nav class="hidden lg:flex items-center gap-8">
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="flex items-center gap-1 text-white hover:text-orange font-semibold transition-colors">
+                        Services
+                        <svg class="w-4 h-4 transition-transform duration-200" :class="open ? 'rotate-180 text-orange' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-full left-0 mt-2 w-64 bg-slate/95 backdrop-blur-md border border-gray/20 border-t-2 border-t-orange rounded-b-lg shadow-2xl py-2" x-cloak>
+                        <a href="roofing.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Commercial Roofing</a>
+                        <a href="electrical.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Electrical Systems</a>
+                        <a href="solar.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Solar Infrastructure</a>
+                        <a href="industrial.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Industrial Facilities</a>
+                        <a href="petrochemical.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Petrochemical & Refining</a>
+                        <a href="envelope.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Building Envelopes</a>
+                        <a href="maritime.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Maritime & Offshore</a>
+                        <a href="datacenter.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Data Centers</a>
+                        <a href="utilities.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">High-Voltage Utilities</a>
+                    </div>
+                </div>
+                
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="flex items-center gap-1 text-orange font-bold transition-colors">
+                        Company
+                        <svg class="w-4 h-4 transition-transform duration-200" :class="open ? 'rotate-180 text-orange' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-full left-0 mt-2 w-56 bg-slate/95 backdrop-blur-md border border-gray/20 border-t-2 border-t-orange rounded-b-lg shadow-2xl py-2" x-cloak>
+                        <a href="service-area.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Service Area</a>
+                        <a href="safety.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Safety & Compliance</a>
+                        <a href="technology.html" class="block px-6 py-3 text-sm font-bold text-orange bg-white/5 border-l-2 border-orange">Technology</a>
+                        <a href="careers.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Careers</a>
+                    </div>
+                </div>
+                
+                <a href="index.html#standards" class="text-white hover:text-orange font-semibold transition-colors">Standards</a>
+                <a href="contact.html" class="px-6 py-2 border border-orange text-orange font-bold rounded-md hover:bg-orange/10 transition-all">Contact</a>
+            </nav>
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="lg:hidden relative z-50 p-2 text-white focus:outline-none">
+                <svg x-show="!mobileMenuOpen" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg x-show="mobileMenuOpen" x-cloak class="w-8 h-8 text-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
-
-        <nav id="main-nav">
-            <div class="dropdown">
-                <a href="index.html#services" class="nav-btn">Services ▾</a>
-                <div class="dropdown-content">
-                    <a href="roofing.html">Commercial Roofing</a>
-                    <a href="electrical.html">Electrical Systems</a>
-                    <a href="solar.html">Solar Infrastructure</a>
-                    <a href="industrial.html">Industrial Facilities</a>
-                    <a href="petrochemical.html">Petrochemical & Refining</a>
-                    <a href="envelope.html">Building Envelopes</a>
-                    <a href="maritime.html">Maritime & Offshore</a>
-                    <a href="datacenter.html">Data Centers</a>
-                    <a href="utilities.html">High-Voltage Utilities</a>
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-full" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-full" class="fixed inset-0 z-40 bg-navy/98 backdrop-blur-xl flex flex-col pt-24 px-6 lg:hidden" x-cloak>
+            <div class="flex flex-col gap-4 text-xl font-semibold overflow-y-auto pb-10">
+                <a href="index.html#services" class="text-gray border-b border-slate pb-2">Services</a>
+                <span class="text-white pt-2">Company</span>
+                <div class="flex flex-col gap-3 pl-4 border-l-2 border-slate ml-2 text-lg">
+                    <a href="service-area.html" @click="mobileMenuOpen = false" class="text-gray">Service Area</a>
+                    <a href="safety.html" @click="mobileMenuOpen = false" class="text-gray">Safety & Compliance</a>
+                    <a href="technology.html" @click="mobileMenuOpen = false" class="text-orange">Technology</a>
+                    <a href="careers.html" @click="mobileMenuOpen = false" class="text-gray">Careers</a>
                 </div>
+                <a href="index.html#standards" @click="mobileMenuOpen = false" class="text-white border-b border-slate pb-4 mt-4">Standards</a>
+                <a href="contact.html" class="mt-4 bg-orange text-white text-center py-4 rounded-lg">Contact GSI</a>
             </div>
-            <div class="dropdown">
-                <a href="#" class="nav-btn" style="color: var(--infrared-orange);">Company ▾</a>
-                <div class="dropdown-content">
-                    <a href="safety.html">Safety & Compliance</a>
-                    <a href="service-area.html">Service Area</a>
-                    <a href="careers.html">Careers</a>
-                    <a href="technology.html" style="color: var(--infrared-orange);">Technology</a>
-                </div>
-            </div>
-            <a href="index.html#standards" class="nav-btn">Standards</a>
-            
-            <a href="contact.html" class="nav-btn desktop-only" style="border-color: var(--infrared-orange); color: var(--infrared-orange);">Contact</a>
-        </nav>
+        </div>
     </header>
 
-    <section class="sub-hero">
-        <h1>Diagnostic Fleet</h1>
-        <h2>Enterprise-grade sensors for high-fidelity data capture.</h2>
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-navy border-b border-slate">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,90,0,0.08)_0%,transparent_50%)]"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-4 leading-tight">Diagnostic Fleet</h1>
+            <h2 class="text-xl md:text-2xl text-orange font-light tracking-wide">Enterprise-grade sensors for high-fidelity data capture.</h2>
+        </div>
     </section>
 
-    <section class="protocol-section">
-        <div class="section-header">
-            <h2>Sensor Capabilities</h2>
-            <p>We utilize ruggedized, multi-sensor UAS platforms designed for rapid deployment in complex industrial environments. Our fleet is equipped with industry-leading radiometric cores for precise thermal quantification.</p>
-        </div>
-
-        <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+    <section class="py-24 bg-navy relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
             
-            <div class="service-card">
-                <h3>Enterprise Aerial Platform</h3>
-                <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 15px;">Profile: All-Weather Industrial Inspection</p>
-                <ul style="color: var(--cool-gray); list-style: none; padding: 0; line-height: 2;">
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Thermal Sensor:</strong> 640 × 512 Radiometric (30Hz)</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Visual Sensor:</strong> 48MP 1/1.3" CMOS (High-Res Zoom)</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Zoom Capability:</strong> 56× Hybrid Zoom (Safe Standoff)</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Laser Rangefinder:</strong> 1200m Range (Precise Geolocation)</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Weather Rating:</strong> IP55 (Rain & Dust Resistant)</li>
-                    <li><strong>Flight Endurance:</strong> 45+ Minutes (Continuous Ops)</li>
-                </ul>
+            <div class="mb-16 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Sensor Capabilities</h2>
+                <p class="text-lg text-gray leading-relaxed">We utilize ruggedized, multi-sensor UAS platforms designed for rapid deployment in complex industrial environments. Our fleet is equipped with industry-leading radiometric cores for precise thermal quantification.</p>
             </div>
 
-            <div class="service-card">
-                <h3>Handheld Thermography Units</h3>
-                <p style="color: var(--crisp-white); font-weight: bold; margin-bottom: 15px;">Profile: Electrical Panels & Data Centers</p>
-                <ul style="color: var(--cool-gray); list-style: none; padding: 0; line-height: 2;">
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Sensor Resolution:</strong> 320 × 240 Radiometric</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Temp Range:</strong> -20°C to 550°C</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Sensitivity (NETD):</strong> < 0.04°C (High Contrast)</li>
-                    <li style="border-bottom: 1px solid rgba(136, 146, 176, 0.1);"><strong>Imaging Tech:</strong> Multi-Spectral Dynamic Imaging (MSX)</li>
-                    <li><strong>Safety:</strong> Non-Contact Inspection (Arc Flash Safe)</li>
-                </ul>
+            <div class="grid md:grid-cols-2 gap-8 mb-24">
+                
+                <div class="bg-slate p-8 rounded-2xl border border-gray/20 shadow-xl hover:border-orange transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-2">Enterprise Aerial Platform</h3>
+                    <p class="text-orange font-bold tracking-wide mb-6">Profile: All-Weather Industrial Inspection</p>
+                    <ul class="text-gray space-y-4 font-light leading-relaxed">
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Thermal Sensor:</strong> 640 × 512 Radiometric (30Hz)</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Visual Sensor:</strong> 48MP 1/1.3" CMOS (High-Res Zoom)</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Zoom Capability:</strong> 56× Hybrid Zoom (Safe Standoff)</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Laser Rangefinder:</strong> 1200m Range (Precise Geolocation)</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Weather Rating:</strong> IP55 (Rain & Dust Resistant)</li>
+                        <li class="pt-1"><strong class="text-white font-medium">Flight Endurance:</strong> 45+ Minutes (Continuous Ops)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate p-8 rounded-2xl border border-gray/20 shadow-xl hover:border-orange transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-2">Handheld Thermography Units</h3>
+                    <p class="text-orange font-bold tracking-wide mb-6">Profile: Electrical Panels & Data Centers</p>
+                    <ul class="text-gray space-y-4 font-light leading-relaxed">
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Sensor Resolution:</strong> 320 × 240 Radiometric</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Temp Range:</strong> -20°C to 550°C</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Sensitivity (NETD):</strong> &lt; 0.04°C (High Contrast)</li>
+                        <li class="border-b border-gray/10 pb-4"><strong class="text-white font-medium">Imaging Tech:</strong> Multi-Spectral Dynamic Imaging (MSX)</li>
+                        <li class="pt-1"><strong class="text-white font-medium">Safety:</strong> Non-Contact Inspection (Arc Flash Safe)</li>
+                    </ul>
+                </div>
+
             </div>
 
-        </div>
-
-        <div class="contact-container" style="margin-top: 80px; align-items: center;">
-            <div class="contact-info">
-                <h2>Radiometric Analysis</h2>
-                <p>Data collection is only the first step. We utilize industry-leading post-processing software to analyze every pixel of data captured in the field.</p>
-                <p style="margin-top: 20px;">This workflow allows us to adjust emissivity values for specific materials (e.g., concrete vs. metal), tune thermal spans to highlight subtle anomalies, and generate audit-ready reports that are comprehensive and satisfy insurance requirements.</p>
+            <div class="grid lg:grid-cols-2 gap-12 items-center bg-slate rounded-3xl p-8 md:p-16 border border-gray/20 shadow-2xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Radiometric Analysis</h2>
+                    <p class="text-lg text-gray leading-relaxed mb-6">Data collection is only the first step. We utilize industry-leading post-processing software to analyze every pixel of data captured in the field.</p>
+                    <p class="text-lg text-gray leading-relaxed">This workflow allows us to adjust emissivity values for specific materials (e.g., concrete vs. metal), tune thermal spans to highlight subtle anomalies, and generate audit-ready reports that are comprehensive and satisfy insurance requirements.</p>
+                </div>
+                
+                <div class="bg-navy border border-orange/40 rounded-2xl p-8 text-center shadow-[0_0_30px_rgba(255,90,0,0.1)] relative z-10 flex flex-col justify-center min-h-[250px]">
+                    <h3 class="text-2xl font-bold text-orange mb-8 uppercase tracking-widest">Deliverables</h3>
+                    <p class="text-xl text-white font-light mb-4">Geo-Tagged Orthomosaics</p>
+                    <p class="text-xl text-white font-light mb-4">Radiometric JPEGs (R-JPG)</p>
+                    <p class="text-xl text-white font-light">Comprehensive Audit Reports</p>
+                </div>
             </div>
-            <div class="contact-form" style="background: transparent; border: 1px solid var(--infrared-orange); text-align: center; display: flex; flex-direction: column; justify-content: center;">
-                <h3 style="color: var(--infrared-orange);">Deliverables</h3>
-                <p style="color: var(--cool-gray);">Geo-Tagged Orthomosaics</p>
-                <p style="color: var(--cool-gray);">Radiometric JPEGs (R-JPG)</p>
-                <p style="color: var(--cool-gray);">Comprehensive Audit Reports</p>
-            </div>
-        </div>
 
-        <div style="text-align: center; margin-top: 80px;">
-            <a href="contact.html" class="cta-button">Request Sample Report</a>
+            <div class="text-center mt-20">
+                <a href="contact.html" class="inline-block px-10 py-4 bg-orange text-white font-bold text-lg rounded-lg shadow-[0_0_20px_rgba(255,90,0,0.2)] hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(255,90,0,0.4)] transition-all duration-300">Request Sample Report</a>
+            </div>
+
         </div>
     </section>
 
-    <footer>
-        <div style="text-align: center; padding: 40px 20px; background-color: #071121;">
-            <img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="footer-logo" style="height: 30px; margin-bottom: 20px;">
-            <p style="color: var(--cool-gray); font-size: 0.9rem; margin-bottom: 10px;">&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
-            <div style="font-size: 0.85rem;">
-                <a href="privacy.html" style="color: var(--cool-gray); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
-                <a href="terms.html" style="color: var(--cool-gray); text-decoration: none; margin: 0 10px;">Terms of Service</a>
+    <footer class="bg-[#050B14] py-12 border-t border-gray/20">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center">
+            <a href="index.html"><img src="images/GSI_Thermal_Horizontal_Lockup_White_Transparent.png" alt="GSI White Logo" class="h-8 mb-8 opacity-80 hover:opacity-100 transition-opacity duration-300"></a>
+            <div class="flex gap-6 mb-8 text-sm font-medium">
+                <a href="privacy.html" class="text-gray hover:text-orange transition-colors duration-200">Privacy Policy</a>
+                <span class="text-gray/30">|</span>
+                <a href="terms.html" class="text-gray hover:text-orange transition-colors duration-200">Terms of Service</a>
             </div>
+            <p class="text-gray/50 text-sm tracking-wide">&copy; 2026 Gulf South Infrared, LLC. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        /* Mobile Menu Toggle */
-        function toggleMenu() {
-            var nav = document.getElementById("main-nav");
-            nav.classList.toggle("active");
-        }
-    </script>
-
 </body>
 </html>
