@@ -46,7 +46,8 @@
                 <img src="images/GSI_Thermal_Horizontal_Lockup_Full_Color_DBG_Trans.png" alt="Gulf South Infrared" class="h-10 md:h-12 w-auto">
             </a>
 
-            <nav class="hidden lg:flex items-center gap-8">
+<nav class="hidden lg:flex items-center gap-8">
+                
                 <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
                     <button class="flex items-center gap-1 text-white hover:text-orange font-semibold transition-colors">
                         Services
@@ -65,7 +66,19 @@
                     </div>
                 </div>
 
-                <a href="service-area.html" class="text-white hover:text-orange font-semibold transition-colors">Company</a>
+                <div class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                    <button class="flex items-center gap-1 text-white hover:text-orange font-semibold transition-colors">
+                        Company
+                        <svg class="w-4 h-4 transition-transform duration-200" :class="open ? 'rotate-180 text-orange' : ''" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-full left-0 mt-2 w-56 bg-slate/95 backdrop-blur-md border border-gray/20 border-t-2 border-t-orange rounded-b-lg shadow-2xl py-2" x-cloak>
+                        <a href="service-area.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Service Area</a>
+                        <a href="safety.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Safety & Compliance</a>
+                        <a href="technology.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Technology</a>
+                        <a href="careers.html" class="block px-6 py-3 text-sm text-gray hover:text-white hover:bg-white/5 hover:pl-8 transition-all border-l-2 border-transparent hover:border-orange">Careers</a>
+                    </div>
+                </div>
+
                 <a href="#standards" class="text-white hover:text-orange font-semibold transition-colors">Standards</a>
                 
                 <a href="contact.html" class="px-6 py-2 border border-orange text-orange font-bold rounded-md hover:bg-orange/10 transition-all">
